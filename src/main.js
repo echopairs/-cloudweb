@@ -3,18 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import components from './components/_base-header' // 加载公共组件
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import store from './store'
+
+import './icons'
+
+require('es6-promise').polyfill()
+
 
 Vue.config.productionTip = false
 
-// Object.keys(components).forEach((key) => {
-//   var name = key.replace(/(\w)/, (v) => v.toUpperCase()) // 首字母大写
-//   Vue.component(`v${name}`, components[key])
-// })
+Vue.use(ElementUI);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
